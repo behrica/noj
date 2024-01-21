@@ -1,0 +1,24 @@
+
+
+Bootstrap: docker
+From: clojure:tools-deps-1.11.1.1435-bookworm-slim
+
+%files
+    apptainer/execute_clj.sh /usr/local/bin/execute_clj.sh
+
+%post
+    apt-get update && apt-get install -y pipx
+    PIPX_BIN_DIR=/usr/local/bin PIPX_HOME=/usr/local pipx install poetry
+    chmod +x /usr/local/bin/execute_clj.sh
+
+%environment
+    export LC_ALL=C
+
+
+%runscript
+    /usr/local/bin/execute_clj.sh
+
+%help
+This container runs the normal `clj` script but in an environment
+correctly setup for using `libpython-clj` and `clojisr`
+It uses a provided `pyproject.toml` to setp a disposable python venv
