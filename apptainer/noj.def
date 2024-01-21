@@ -11,12 +11,14 @@ From: eclipse-temurin:11.0.21_9-jdk-jammy
     curl -L -O https://github.com/clojure/brew-install/releases/latest/download/posix-install.sh
     chmod +x posix-install.sh
     ./posix-install.sh
-    apt-get update && apt-get install -y python3-pip python3-venv python-is-python3 rlwrap
+    apt-get update && apt-get install -y python3-pip python3-venv python-is-python3 rlwrap r-base
     python3 -m pip install pipx
 #    python3 -m pipx ensurepath
 #    apt-get update && apt-get install -y pipx python-is-python3
     PIPX_BIN_DIR=/usr/local/bin PIPX_HOME=/usr/local pipx install poetry
     chmod +x /usr/local/bin/execute_clj.sh
+    Rscript -e 'install.packages("renv")'
+    Rscript -e 'install.packages("Rserve",,"http://rforge.net")'
 
 %environment
     export LC_ALL=C
