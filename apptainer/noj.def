@@ -1,13 +1,20 @@
 
 
 Bootstrap: docker
-From: clojure:tools-deps-1.11.1.1435-bookworm-slim
+#From: mcr.microsoft.com/devcontainers/java:11-bullseye
+From: eclipse-temurin:11.0.21_9-jdk-jammy
 
 %files
     apptainer/execute_clj.sh /usr/local/bin/execute_clj.sh
 
 %post
-    apt-get update && apt-get install -y pipx
+    curl -L -O https://github.com/clojure/brew-install/releases/latest/download/posix-install.sh
+    chmod +x posix-install.sh
+    ./posix-install.sh
+    apt-get update && apt-get install -y python3-pip python3-venv python-is-python3 rlwrap
+    python3 -m pip install pipx
+#    python3 -m pipx ensurepath
+#    apt-get update && apt-get install -y pipx python-is-python3
     PIPX_BIN_DIR=/usr/local/bin PIPX_HOME=/usr/local pipx install poetry
     chmod +x /usr/local/bin/execute_clj.sh
 
@@ -16,7 +23,7 @@ From: clojure:tools-deps-1.11.1.1435-bookworm-slim
 
 
 %runscript
-    /usr/local/bin/execute_clj.sh
+    /usr/local/bin/execute_clj.sh "$@"
 
 %help
 This container runs the normal `clj` script but in an environment
