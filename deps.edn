@@ -8,7 +8,7 @@
         scicloj/scicloj.ml {:mvn/version "0.3"}
         clj-python/libpython-clj {:mvn/version "2.025"}
         org.slf4j/slf4j-simple {:mvn/version "2.0.10"}
-
+        scicloj/clojisr {:mvn/version "1.0.0-BETA22"}
         org.scicloj/tempfiles {:mvn/version "1-alpha2"}}
  :aliases
  {:build {:deps {io.github.clojure/tools.build {:mvn/version "0.9.6"}
@@ -18,5 +18,5 @@
          :extra-deps {org.clojure/test.check {:mvn/version "1.1.1"}
                       io.github.cognitect-labs/test-runner
                       {:git/tag "v0.5.1" :git/sha "dfb30dd"}
-                      org.scicloj/clay {:mvn/version "2-alpha66"}}}
-  :dev {:extra-deps {org.scicloj/clay {:mvn/version "2-alpha66"}}}}}
+                      org.scicloj/clay {:mvn/version "2-alpha72"}}}
+  :dev {:extra-deps {org.scicloj/clay {:mvn/version "2-alpha72"}}}}}
