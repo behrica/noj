@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file. This change log follows the conventions of [keepachangelog.com](http://keepachangelog.com/).
 
+## unreleased
+- added tablecloth ns with lifted tablecloth fns,
+  which take either dataset or ctx as first parameter
+
 ## [1-alpha25] - 2024-01-20
 - added Clojisr dependency
 
