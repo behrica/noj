@@ -19,6 +19,7 @@ From: eclipse-temurin:11.0.21_9-jdk-jammy
     chmod +x /usr/local/bin/execute_clj.sh
     Rscript -e 'install.packages("renv")'
     Rscript -e 'install.packages("Rserve",,"http://rforge.net")'
+    Rscript -e 'install.packages("Require")'
 
 %environment
     export LC_ALL=C
