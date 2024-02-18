@@ -5,7 +5,11 @@
         generateme/fastmath {:mvn/version "2.2.1"}
         aerial.hanami/aerial.hanami {:mvn/version "0.18.0"}
         cljplot/cljplot {:mvn/version "0.0.3"}
-        scicloj/scicloj.ml {:mvn/version "0.3"}
+        scicloj.ml/metamorph {:git/url "https://github.com/scicloj/metamorph.ml"
+                              :git/sha "2cab47cf5ef502b8688cd3186633e8f05f1f68e5"}
+        scicloj.ml/smile     {:git/url "https://github.com/scicloj/scicloj.ml.smile"
+                              :git/sha "0a8e7009a1fc29592108bfebc8b774c06d5e0d53"}
+        ;; scicloj/scicloj.ml {:mvn/version "0.3"}
         clj-python/libpython-clj {:mvn/version "2.025"}
         scicloj/clojisr {:mvn/version "1.0.0-BETA22"}
         org.scicloj/tempfiles {:mvn/version "1-alpha2"}
@@ -17,6 +21,14 @@
   :test {:extra-paths ["test"]
          :extra-deps {org.clojure/test.check {:mvn/version "1.1.1"}
                       io.github.cognitect-labs/test-runner
-                      {:git/tag "v0.5.1" :git/sha "dfb30dd"}
-                      org.scicloj/clay {:mvn/version "2-alpha79"}}}
-  :dev {:extra-deps {org.scicloj/clay {:mvn/version "2-alpha79"}}}}}
+                      {:git/tag "v0.5.1" :git/sha "dfb30dd"}}}}
+
+ :dev {:extra-deps {org.scicloj/clay {:mvn/version "2-alpha79"}}}
+
+ :noj
+ {:extra-deps {org.scicloj/clay              {:mvn/version "2-alpha79"}
+               io.github.nextjournal/clerk   {:mvn/version "0.15.957"}
+               org.scicloj/kind-portal       {:mvn/version "1-alpha11"}
+               nrepl/nrepl                   {:mvn/version "1.0.0"}
+               cider/cider-nrepl             {:mvn/version "0.43.0"}
+               refactor-nrepl/refactor-nrepl {:mvn/version "3.6.0"}}}}

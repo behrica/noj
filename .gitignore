@@ -33,3 +33,6 @@
 _quarto.yml
 temp
 
+/.RData
+/.Rhistory
+/.clj-kondo/
