@@ -1,13 +1,14 @@
 # scinojure (noj)
 
-An opinionated way to use the emerging Clojure data stack (WIP)
+Noj is a work-in-progress library collecting a few of the relevant Clojure data & science with additional convenience layers composing them together.
 
 [![Clojars Project](https://img.shields.io/clojars/v/org.scicloj/noj.svg)](https://clojars.org/org.scicloj/noj)
 
 ## Status
-Alpha-stage.
 
-Some parts are stabilizing and will be documented better soon.
+Some parts are stable.
+
+Some parts are still stabilizing, and are marked as experimental in the docs.
 
 ## Usage
 [Docs](https://scicloj.github.io/noj/)

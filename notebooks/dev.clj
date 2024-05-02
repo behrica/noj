@@ -3,12 +3,11 @@
 
 (clay/make! {:format [:quarto :html]
              :base-source-path "notebooks"
-             :source-path ["index.clj"
-                           "datasets.clj"
-                           "image.clj"
-                           "python.clj"
-                           "stats.clj"
-                           "visualization.clj"]
+             :source-path (->> "notebooks/chapters.edn"
+                               slurp
+                               clojure.edn/read-string
+                               (map #(format "noj_book/%s.clj" %))
+                               (cons "index.clj"))
              :base-target-path "docs"
              :book {:title "Noj Documentation"}
              :clean-up-target-dir true})

@@ -1,6 +1,37 @@
 # Change Log
 All notable changes to this project will be documented in this file. This change log follows the conventions of [keepachangelog.com](http://keepachangelog.com/).
 
+## [1-alpha34] - 2024-04-15
+- removed the currently-unnecessary `calc-correlations-matrix` and `round` functions (#22) - thanks, @behrica
+- dropped the histogram computation function and used the one in Fastmath instead (#21) - thanks, @behrica
+- updated deps - in particular, added Tablecloth Columns
+
+## [1-alpha33] - 2024-04-08
+- updated Tablecloth version
+
+## [1-alpha32] - 2024-04-08
+- scicloj.ml.tribuo dependency
+
+## [1-alpha31] - 2024-03-23
+- changed histogram implementation - using bar-charts now (#5)
+- updated deps
+- removed the Hanami templates namespace, as it has been adapted and moved into Hanami itself
+
+## [1-alpha30] - 2024-03-20
+- reorganizing the vis namespaces
+
+## [1-alpha29] - 2024-03-12
+- rendering Hanami plots as SVG by default
+               
+## [1-alpha28] - 2024-02-29
+- removed the tensor->image function, as it exists in dtype-next now (#14)
+
+## [1-alpha27] - 2024-02-24
+- updated metamorph.ml dep
+
+## [1-alpha26] - 2024-02-21
+- removing the datasets namespace to avoid duplication with metamporh.ml (#4)
+
 ## [1-alpha25] - 2024-01-20
 - added Clojisr dependency
 
