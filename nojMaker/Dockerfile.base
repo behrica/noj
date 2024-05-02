@@ -1,0 +1,28 @@
+FROM ubuntu
+
+RUN apt-get update
+ARG DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y tzdata
+RUN unlink /etc/localtime && ln -s /usr/share/zoneinfo/Europe/Rome /etc/localtime
+RUN apt-get -y install curl zip unzip git build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev curl libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev gdebi-core rlwrap
+
+SHELL ["/bin/bash", "-c"]
+RUN curl -s -S -o ./get-sdkman.sh "https://get.sdkman.io?rcupdate=false" \
+  && chmod +x ./get-sdkman.sh \
+  && ./get-sdkman.sh \
+  && rm ./get-sdkman.sh \
+  # Change SDKMAN's config to be suitable for a CI pipeline execution
+  && sed -i 's/sdkman_auto_answer=false/sdkman_auto_answer=true/g'                $HOME/.sdkman/etc/config \
+  && sed -i 's/sdkman_selfupdate_feature=true/sdkman_selfupdate_feature=false/g'  $HOME/.sdkman/etc/config \
+  && sed -i 's/sdkman_colour_enable=true/sdkman_colour_enable=false/g'            $HOME/.sdkman/etc/config
+
+ENV BASH_ENV="\$HOME/.sdkman/bin/sdkman-init.sh"
+
+RUN sdk version
+RUN curl https://pyenv.run | bash
+
+ENV HOME  /root
+ENV PYENV_ROOT $HOME/.pyenv
+ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
+
+#-----------------
