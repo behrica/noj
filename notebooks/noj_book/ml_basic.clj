@@ -1,11 +1,11 @@
 ;; # Machine learning
 
-;; author: Carsten Behring
+;; Author: Carsten Behring
 
 ;; In this tutorial we will train a simple machine learning model
 ;; in order to predict the survival of titanic passengers given
 ;; their data.
-;;
+;; 
 
 (ns noj-book.ml-basic
   (:require [tablecloth.api :as tc]
@@ -40,12 +40,11 @@
 
 ;; ## Inspect data
 ;;
-;;  The titanic data is part of `metamorph.ml` and in the form of a
-;;  train, test split
+;;  The titanic data is part of `metamorph.ml` and 
+;;  available in the form of a  train, test split
 ;;
 ;;  We use the :train part only for this tutorial.
-;;
-;;
+;;;;
 ;;
 (->
  (data/titanic-ds-split)
