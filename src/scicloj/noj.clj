@@ -1,4 +1,6 @@
-(ns scicloj.noj)
+(ns scicloj.noj
+  (:require [nrepl.server :refer [start-server stop-server]]
+            [nrepl.server :as nrepl-server]))
 
 (defn add-libs-noj-ml []
   (clojure.repl.deps/add-libs
@@ -17,3 +19,6 @@
     'org.tribuo/tribuo-classification-sgd {:mvn/version "4.3.1"}
     'org.tribuo/tribuo-classification-tree {:mvn/version "4.3.1"}
     'org.tribuo/tribuo-classification-xgboost {:mvn/version "4.3.1"}}))
+
+(defn start-nrepl []
+  (nrepl-server/start-server :port 12345))
