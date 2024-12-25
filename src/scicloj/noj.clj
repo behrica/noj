@@ -1,9 +1,10 @@
 (ns scicloj.noj
-  (:require [nrepl.server :refer [start-server stop-server]]
-            [nrepl.server :as nrepl-server]))
+  (:require
+   [clojure.repl.deps :as deps]
+   [nrepl.server :as nrepl-server]))
 
 (defn add-libs-noj-ml []
-  (clojure.repl.deps/add-libs
+  (deps/add-libs
    {'org.scicloj/scicloj.ml.smile {:mvn/version "7.4.3"}
     'org.scicloj/metamorph.ml {:mvn/version "0.10.4"}
     'org.scicloj/sklearn-clj {:mvn/version "0.4.1"}
