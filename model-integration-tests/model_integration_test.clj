@@ -170,16 +170,18 @@ warnings.simplefilter('ignore')")
 (def other-specs [
                   [0.28 {:model-type :smile.classification/mlp
                          :layer-builders [mlp-hidden-layer-builder mlp-output-layer-builder]}]
-                  [0.2 {:model-type :metamorph.ml/dummy-classifier}]])
+                  [0.30 {:model-type :metamorph.ml/dummy-classifier}]
+                  [0.96 {:model-type :metamorph.ml/rf-classifier}]
+                  ])
 
 (def model-specs
   (concat
-   xgboost-specs
+   ;xgboost-specs
    other-specs
-   tribuo-model-specs
-   smile-model-specs
-   sklearn-model-specs)
-   )
+   ;tribuo-model-specs
+   ;smile-model-specs
+   ;sklearn-model-specs
+   ))
 
 
 
