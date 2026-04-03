@@ -10,7 +10,10 @@
         generateme/fastmath                       {:mvn/version "3.0.0-alpha4"}
         generateme/fitdistr                       {:mvn/version "1.1.0-alpha1"}
         org.scicloj/tableplot                     {:mvn/version "1-beta16"}
-        org.scicloj/metamorph.ml                  {:mvn/version "1.3.2"}
+        org.scicloj/metamorph.ml                  
+        {:git/url "https://github.com/scicloj/metamorph.ml"
+         :git/sha "a1f8e1baec88a4f66cf96cee67f2b097b652d36d"}
+        ;{:mvn/version "1.3.2"}
         org.scicloj/sklearn-clj                   {:mvn/version "0.6.1"}
         org.scicloj/scicloj.ml.xgboost            {:mvn/version "6.5.1"}
 
